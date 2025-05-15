@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Logo from './Logo';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,12 +22,13 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'STRONA GŁÓWNA' },
-    { id: 'about', label: 'O MNIE' },
-    { id: 'services', label: 'USŁUGI' },
-    { id: 'training', label: 'TRENING' },
-    { id: 'blog', label: 'BLOG' },
-    { id: 'contact', label: 'KONTAKT' },
+    { id: 'home', label: 'STRONA GŁÓWNA', path: '/' },
+    { id: 'about', label: 'O MNIE', path: '/#about' },
+    { id: 'services', label: 'USŁUGI', path: '/#services' },
+    { id: 'training', label: 'TRENING', path: '/#training' },
+    { id: 'blog', label: 'BLOG', path: '/blog' },
+    { id: 'sklep', label: 'SKLEP', path: '/sklep' },
+    { id: 'contact', label: 'KONTAKT', path: '/kontakt' },
   ];
 
   return (
@@ -36,21 +38,28 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Logo className="text-white" />
+        <Link to="/" className="bg-transparent">
+          <img 
+            src="/home/project/5ae659c1-fb33-4652-aefc-b7cb5c37fb05-removebg-preview.png" 
+            alt="Logo" 
+            className="h-16"
+          />
+        </Link>
         
         <nav className="hidden md:flex space-x-6">
           {navItems.map((item) => (
-            <button
+            <Link
               key={item.id}
-              className={`font-['Montserrat'] font-semibold text-sm tracking-wider transition-all duration-200 ${
-                activeSection === item.id 
-                  ? 'bg-white text-black px-4 py-2' 
-                  : 'text-white hover:text-red-500 px-4 py-2'
+              to={item.path}
+              className={`font-['Montserrat'] font-semibold text-sm tracking-wider transition-all duration-200 bg-black px-4 py-2 ${
+                location.pathname === item.path || (location.pathname === '/' && activeSection === item.id)
+                  ? 'text-white bg-opacity-100' 
+                  : 'text-white bg-opacity-75 hover:bg-opacity-100'
               }`}
               onClick={() => setActiveSection(item.id)}
             >
               {item.label}
-            </button>
+            </Link>
           ))}
         </nav>
         

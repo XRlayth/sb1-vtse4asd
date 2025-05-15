@@ -55,19 +55,26 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, interval = 5000 }) =>
         />
       ))}
 
-      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white">
-        <div className="bg-black bg-opacity-60 px-8 py-6 text-center max-w-4xl">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            TRANSFORMACJA ZACZYNA SIĘ TU
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl mb-8">
-            Profesjonalny trening personalny z Erykiem Puzio
-          </p>
-          <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-8 font-bold uppercase tracking-wider transition-all duration-300 transform hover:scale-105">
-            Umów trening
-          </button>
+      {currentIndex === 0 && (
+        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white">
+          <div className="bg-black bg-opacity-60 px-6 py-2 mb-4 text-center">
+            <h1 className="text-xl font-['Montserrat'] uppercase tracking-wider">
+              Oficjalna Strona
+            </h1>
+          </div>
+          <div className="bg-black bg-opacity-60 px-8 py-6 text-center max-w-4xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              TRANSFORMACJA ZACZYNA SIĘ TU
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl mb-8">
+              Profesjonalny trening personalny z Erykiem Puzio
+            </p>
+            <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-8 font-bold uppercase tracking-wider transition-all duration-300 transform hover:scale-105">
+              Umów trening
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       <button 
         className="absolute z-30 left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all duration-300"
