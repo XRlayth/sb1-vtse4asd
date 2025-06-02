@@ -11,14 +11,14 @@ import Footer from './components/Footer';
 
 function App() {
   const sliderImages = [
-    'https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=2160',
+    'https://raw.githubusercontent.com/XRlayth/zdjeciaeryk/main/pobrane.png',
     'https://raw.githubusercontent.com/XRlayth/zdjeciaeryk/main/Eryk%20Puzio%20(2)%20(1).png',
     'https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   ];
 
   return (
     <Router>
-      <div className="font-sans">
+      <div className="font-sans bg-[#121212] text-white">
         <Header />
         <Routes>
           <Route path="/" element={

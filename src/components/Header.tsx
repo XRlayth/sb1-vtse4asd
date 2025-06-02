@@ -66,13 +66,13 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Sliding Menu */}
       <div 
-        className={`fixed inset-0 bg-black z-50 transform transition-transform duration-300 ${
+        className={`fixed inset-0 bg-black z-50 transform transition-transform duration-500 ${
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
+        style={{ width: '50vw' }}
       >
-        <div className="container mx-auto px-4 py-8">
+        <div className="container h-full px-4 py-8">
           <button
             onClick={() => setIsMenuOpen(false)}
             className="absolute top-6 right-6 text-white hover:text-red-500 transition-colors duration-300"
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
               <Link
                 key={item.id}
                 to={item.path}
-                className={`block text-2xl font-semibold text-white py-4 hover:text-red-500 transition-colors duration-300 ${
+                className={`block text-2xl font-semibold text-white py-4 hover:text-red-500 transition-colors duration-300 hover:shadow-[0_0_15px_-3px_rgba(239,68,68,0.4)] ${
                   location.pathname === item.path ? 'text-red-500' : ''
                 }`}
                 onClick={() => setIsMenuOpen(false)}

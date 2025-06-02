@@ -26,7 +26,7 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-black text-white">
+    <section id="services" className="py-20 bg-[#1E1E1E]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">MOJE USŁUGI</h2>
         
@@ -34,14 +34,14 @@ const ServicesSection: React.FC = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-gray-900 p-8 text-center transition-transform duration-300 hover:transform hover:scale-105"
+              className="bg-[#2C2C2C] p-8 text-center transition-transform duration-300 hover:transform hover:scale-105 rounded-lg hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]"
             >
               <div className="flex justify-center">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold mb-4">{service.title}</h3>
               <p className="text-gray-300">{service.description}</p>
-              <div className="mt-6 pt-6 border-t border-gray-800">
+              <div className="mt-6 pt-6 border-t border-gray-700">
                 <button className="text-red-500 font-bold hover:text-red-400 transition-colors duration-300">
                   DOWIEDZ SIĘ WIĘCEJ
                 </button>
@@ -54,7 +54,7 @@ const ServicesSection: React.FC = () => {
           <p className="text-xl mb-8">
             Potrzebujesz spersonalizowanego podejścia do treningu i diety?
           </p>
-          <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-8 font-bold uppercase tracking-wider transition-all duration-300">
+          <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-8 font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_20px_rgba(239,68,68,0.6)]">
             Skontaktuj się ze mną
           </button>
         </div>
