@@ -3,7 +3,7 @@ import { Award, Target, Zap } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white mt-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/2">
