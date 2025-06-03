@@ -1,66 +1,68 @@
 import React from 'react';
-import { Users, User, Utensils, Calendar } from 'lucide-react';
+import { Timeline } from './ui/timeline';
 
 const ServicesSection: React.FC = () => {
-  const services = [
+  const timelineData = [
     {
-      icon: <User size={40} className="mb-4 text-red-600" />,
       title: "Trening Personalny",
-      description: "Indywidualne sesje treningowe dostosowane do Twoich potrzeb i celów. Maksymalne rezultaty przy minimalnym ryzyku kontuzji."
-    },
-    {
-      icon: <Users size={40} className="mb-4 text-red-600" />,
-      title: "Trening Grupowy",
-      description: "Dynamiczne treningi w małych grupach. Motywacja, energia i wspólne osiąganie celów w przyjaznej atmosferze."
-    },
-    {
-      icon: <Utensils size={40} className="mb-4 text-red-600" />,
-      title: "Plany Dietetyczne",
-      description: "Spersonalizowane plany żywieniowe, które pomogą Ci osiągnąć wymarzoną sylwetkę. Zdrowe i smaczne posiłki dostosowane do Twojego stylu życia."
-    },
-    {
-      icon: <Calendar size={40} className="mb-4 text-red-600" />,
-      title: "Plany Treningowe",
-      description: "Profesjonalne plany treningowe do samodzielnego wykonania. Regularne konsultacje i aktualizacje w miarę postępów."
-    }
-  ];
-
-  return (
-    <section id="services" className="py-20 bg-[#1E1E1E]">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">MOJE USŁUGI</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="bg-[#2C2C2C] p-8 text-center transition-transform duration-300 hover:transform hover:scale-105 rounded-lg hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]"
-            >
-              <div className="flex justify-center">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-              <p className="text-gray-300">{service.description}</p>
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <button className="text-red-500 font-bold hover:text-red-400 transition-colors duration-300">
-                  DOWIEDZ SIĘ WIĘCEJ
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="mt-16 text-center">
-          <p className="text-xl mb-8">
-            Potrzebujesz spersonalizowanego podejścia do treningu i diety?
+      content: (
+        <div className="bg-[#2C2C2C] p-8 rounded-lg">
+          <p className="text-gray-300 text-sm md:text-base mb-6">
+            Indywidualne sesje treningowe dostosowane do Twoich potrzeb i celów. 
+            Maksymalne rezultaty przy minimalnym ryzyku kontuzji.
           </p>
-          <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-8 font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_20px_rgba(239,68,68,0.6)]">
-            Skontaktuj się ze mną
+          <img
+            src="https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Personal Training"
+            className="w-full h-48 md:h-64 object-cover rounded-lg mb-6"
+          />
+          <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-all duration-300">
+            Dowiedz się więcej
           </button>
         </div>
-      </div>
-    </section>
-  );
+      ),
+    },
+    {
+      title: "Trening Grupowy",
+      content: (
+        <div className="bg-[#2C2C2C] p-8 rounded-lg">
+          <p className="text-gray-300 text-sm md:text-base mb-6">
+            Dynamiczne treningi w małych grupach. Motywacja, energia i wspólne 
+            osiąganie celów w przyjaznej atmosferze.
+          </p>
+          <img
+            src="https://images.pexels.com/photos/6456301/pexels-photo-6456301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Group Training"
+            className="w-full h-48 md:h-64 object-cover rounded-lg mb-6"
+          />
+          <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-all duration-300">
+            Dowiedz się więcej
+          </button>
+        </div>
+      ),
+    },
+    {
+      title: "Plany Dietetyczne",
+      content: (
+        <div className="bg-[#2C2C2C] p-8 rounded-lg">
+          <p className="text-gray-300 text-sm md:text-base mb-6">
+            Spersonalizowane plany żywieniowe, które pomogą Ci osiągnąć wymarzoną sylwetkę. 
+            Zdrowe i smaczne posiłki dostosowane do Twojego stylu życia.
+          </p>
+          <img
+            src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Dietary Plans"
+            className="w-full h-48 md:h-64 object-cover rounded-lg mb-6"
+          />
+          <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-all duration-300">
+            Dowiedz się więcej
+          </button>
+        </div>
+      ),
+    },
+  ];
+
+  return <Timeline data={timelineData} />;
 };
 
 export default ServicesSection;
